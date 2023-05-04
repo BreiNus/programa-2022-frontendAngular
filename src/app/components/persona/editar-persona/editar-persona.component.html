@@ -1,0 +1,38 @@
+<form novalidate #f="ngForm">
+    <h2 mat-dialog-title>Modificar datos Personales:</h2>
+    <div class="form-container">
+        <label for="nombrePersona">Nombre completo:
+            <input type="text" id="nombrePersona" name="nombrePersona" placeholder="Ej: Matias Rogante"
+                [(ngModel)]="persona.nombrePersona" required />
+        </label>
+        <label for="puestoTrabajo">Puesto de trabajo:
+            <input type="text" id="puestoTrabajo" name="puestoTrabajo" placeholder="Ej: Desarrollador..."
+                [(ngModel)]="persona.puestoTrabajo" required />
+        </label>
+        <label for="localidad">Pais y cuidad de residencia:
+            <input type="text" id="localidad" name="localidad" placeholder="Argentina/Rosasio"
+                [(ngModel)]="persona.localidad" required />
+        </label>
+        <label for="telefono">Teléfono: ||Esto se puede ver solo en la pag Contacto||
+            <input type="tel" id="telefono" name="telefono" placeholder="341312412" [(ngModel)]="persona.telefono"
+                required />
+        </label>
+        <label for="email">Email: ||Esto se puede ver solo en la pag Contacto||
+            <input type="email" id="email" name="email" placeholder="mail@ejemplo.com" [(ngModel)]="persona.email"
+                required />
+        </label>
+        <label for="gitHubPersonal">Github:
+            <input type="url" id="gitHubPersonal" name="gitHubPersonal" placeholder="URL de GitHub"
+                [(ngModel)]="persona.gitHubPersonal" required />
+        </label>
+        <label for="sobreMi">Breve descripcion de la persona:
+            <textarea id="sobreMi" name="sobreMi" maxlength="1000"
+                placeholder="Ej: Hola, encantado de conocerlo soy Matías, una persona apasionada por..."
+                [(ngModel)]="persona.sobreMi" required></textarea>
+        </label>
+    </div>
+    <div mat-dialog-actions class="form-container_button">
+        <button mat-button (click)="onNoClick()">Cancelar</button>
+        <button mat-button cdkFocusInitial class="send-button" (click)="onUpdate(data.id)">Actualizar</button>
+    </div>
+</form>

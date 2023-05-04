@@ -1,0 +1,50 @@
+.fuente_titulo {
+    font-family: 'Bruno Ace SC', cursive;
+}
+
+.titulo_proyectos {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.contenedor_padre {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
+    border: 2px solid black;
+    background-color: rgb(144, 151, 158);
+}
+
+.contenedor_hijo {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0;
+}
+
+.titulo_mas_BotonAdd {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.descripcion-puesto__info {
+    display: inline;
+    margin-right: 20px;
+}
+
+.descripcion-puesto {
+    margin: 0 20px;
+    width: 85%;
+}
+
+.descripcion-puesto p {
+    margin-top: 1em;
+}
+
+.urlRepo a {
+    font-weight: bold;
+}

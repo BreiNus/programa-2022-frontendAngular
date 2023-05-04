@@ -1,0 +1,26 @@
+<div class="cc col-md " data-aos="zoom-in">
+    <div class="titulo_mas_BotonAdd">
+        <img src="../assets/images/foto-perfil.jpg" class="img-fluid borde-img" alt="soyyo" />
+        <div class="col-md " data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
+
+            <!--
+        <h4>Hobbies</h4>
+        <p>{{ miQuienSoy.hobbies }}</p>-->
+            <div class="seccion-info">
+                <h1 class="fuente_titulo">¿Quien soy?</h1>
+                <p class="texto-card">{{ persona.sobreMi }}</p>
+                <br />
+                <h1 class="fuente_titulo">Informacion de interes</h1>
+                <p class="texto-card"> <strong><u>Nombre</u>:</strong> {{ persona.nombrePersona }}</p>
+                <p class="texto-card"><strong><u>Puesto de trabajo</u>:</strong> {{ persona.puestoTrabajo }}</p>
+                <p class="texto-card"><strong><u>Localidad</u>:</strong> {{ persona.localidad }}</p>
+                <p class="texto-card"><strong><u>GitHub</u>:</strong> <a [href]="persona.gitHubPersonal"
+                        target="_blank">Click Aqui </a></p>
+                <div>
+                    <button mat-mini-fab *ngIf="isLogged" (click)="openDialogEdit()"><i
+                            class="fa-solid fa-pen-to-square"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

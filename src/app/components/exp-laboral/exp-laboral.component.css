@@ -1,0 +1,14 @@
+@import url(../proyectos/proyectos.component.css);
+
+h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+p {
+    font-size: 1.15em;
+}

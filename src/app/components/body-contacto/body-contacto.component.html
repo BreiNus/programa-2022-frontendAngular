@@ -1,3 +1,6 @@
+<!--Menu de bootstrap-->
+<app-nav-bar></app-nav-bar>
+
 <!--Imagen de fondo de la pagina-->
 <div class="bg contact"></div>
 <!--texto de fondo de la pagina-->
@@ -5,18 +8,29 @@
   <h1>Medios de contacto</h1>
   <p>att Matias Cesar Rogante</p>
 </div>
-<div class="container txt-contact">
-  <div
-    class="row"
-    data-aos="fade-right"
-    data-aos-offset="180"
-    data-aos-easing="ease-in-sine"
-  >
-    <h3>Email: matiasrogante.profesional@gmail.com</h3>
-    <h3>
-      GitHub:
-      <a href="https://github.com/BreiNus?tab=repositories">Click aqui:</a>
-    </h3>
-    <h3>WhatsApp: 123141231</h3>
+
+<div class="cc col-md " data-aos="zoom-in">
+
+  <!--
+      <h4>Hobbies</h4>
+      <p>{{ miQuienSoy.hobbies }}</p>-->
+  <br>
+  <div class="seccion-info">
+    <h1 class="fuente_titulo">¿Hola hay alguien ahi?</h1>
+    <p class="texto-card">Hola por cualquier consulta o duda, no dudes en comunicarte conmigo, en la brevedad me estare
+      comunicando con usted, muchisimas gracias por pasarse por mi portfolio, que tenga un buen dia</p>
+    <h1 class="fuente_titulo">Informacion de contacto</h1>
+    <p class="texto-card"><strong><u>Telefono</u>:</strong> {{ persona.telefono }}</p>
+    <p class="texto-card"><strong><u>Email</u>:</strong> {{ persona.email }}</p>
+    <p class="texto-card"><strong><u>GitHub</u>:</strong> <a [href]="persona.gitHubPersonal" target="_blank">Click
+        Aqui </a></p>
+    <div>
+      <button mat-mini-fab *ngIf="isLogged" (click)="openDialogEdit()"><i
+          class="fa-solid fa-pen-to-square"></i></button>
+    </div>
   </div>
 </div>
+
+
+<!--Footer -->
+<app-footer></app-footer>

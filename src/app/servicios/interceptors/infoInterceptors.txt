@@ -1,0 +1,7 @@
+#NOTE: 
+
+Lo que va a hacer el interceptor es que se pone en medio del request y en medio del backend
+entonces cada peticion que envia el cliente, este va a comprobar que haya tokens en el 
+sessionStorage del navegador y se los adjunta, por ende la request llega con el token, el 
+backend comprueba que sea correcto y en caso de que sea correcto devuelve la response, en caso
+contrario envia el error 

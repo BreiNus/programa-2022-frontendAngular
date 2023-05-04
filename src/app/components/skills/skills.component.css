@@ -1,0 +1,29 @@
+@import url(../proyectos/proyectos.component.css);
+
+/* Skills */
+
+circle-progress {
+    display: flex;
+    justify-content: flex-start
+}
+
+.skills {
+    margin: 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.nueva-skill {
+    display: flex;
+    flex-direction: column;
+    min-width: 100px;
+    margin: 20px;
+}
+
+.iconos-edicion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}

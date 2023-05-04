@@ -1,0 +1,27 @@
+<form novalidate #f="ngForm">
+  <h2 mat-dialog-title>Edicion de proyecto:</h2>
+  <div class="form-container">
+    <label for="nombreProyecto">Nombre del proyecto:
+      <input type="text" id="nombreProyecto" name="nombreProyecto" placeholder="Ej: Portfolio full stack"
+        [(ngModel)]="proyectos.nombreProyecto" required />
+    </label>
+    <label for="urlRepo">URL del repositorio:
+      <input type="url" id="urlRepo" name="urlRepo" placeholder="Ingrese la URL del repositorio"
+        [(ngModel)]="proyectos.urlRepo" required />
+    </label>
+    <label for="imgProyecto">Imagen del proyecto:
+      <input type="url" id="imgProyecto" name="imgProyecto" placeholder="Ingrese la URL de la imagen del proyecto"
+        [(ngModel)]="proyectos.imgProyecto" required />
+    </label>
+    <label for="descripcionProyecto">Descripción del proyecto:
+      <textarea id="descripcionProyecto" name="descripcionProyecto" placeholder="Ej: Desarrolo de *** en lenguaje ***"
+        [(ngModel)]="proyectos.descripcionProyecto" required></textarea>
+    </label>
+  </div>
+  <div mat-dialog-actions class="form-container_button">
+    <button mat-button (click)="onNoClick()">Cancelar</button>
+    <button mat-button cdkFocusInitial class="send-button" (click)="onUpdate(data.id)">
+      Actualizar
+    </button>
+  </div>
+</form>

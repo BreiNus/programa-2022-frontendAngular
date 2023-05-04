@@ -1,0 +1,25 @@
+<br>
+<section class="contenedor_padre" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+    <div class="titulo_mas_BotonAdd" mat-button (click)="openDialogNew()" *ngIf="isLogged">
+        <h2 class="fs-2 text-decoration-underline fuente_titulo">Mis conocimientos</h2>
+        <button mat-mini-fab><i class="fa-regular fa-square-plus fa-lg"></i></button>
+    </div>
+    <div class="skills">
+        <div class="nueva-skill" *ngFor="let skill of skills">
+            <div>
+                <h3>{{skill.nombreSkill}}</h3>
+                <circle-progress [percent]="skill.porcentajeSkill" [radius]="50" [outerStrokeWidth]="10"
+                    [innerStrokeWidth]="8" [outerStrokeColor]="skill.colorSkill" [innerStrokeColor]="'false'"
+                    [showSubtitle]="false" [titleFontSize]="'20'" [animation]="true" [animationDuration]="600">
+                </circle-progress>
+            </div>
+
+            <div>
+                <button mat-mini-fab *ngIf="isLogged" (click)="openDialogEdit(skill.id)"><i
+                        class="fa-solid fa-pen-to-square "></i></button>
+                <button mat-mini-fab *ngIf="isLogged" (click)="delete(skill.id)"><i
+                        class="fa-solid fa-trash-can "></i></button>
+            </div>
+        </div>
+    </div>
+</section>
