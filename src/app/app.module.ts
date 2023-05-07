@@ -19,7 +19,6 @@ import { BodyHomeComponent } from './components/body-home/body-home.component';
 import { BodyQuienSoyComponent } from './components/body-quien-soy/body-quien-soy.component';
 import { BodyContactoComponent } from './components/body-contacto/body-contacto.component';
 import { Page404Component } from './components/page404/page404.component';
-import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/auth/login.component';
 import { RegistroComponent } from './components/auth/registro.component';
@@ -53,7 +52,6 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     BodyQuienSoyComponent,
     BodyContactoComponent,
     Page404Component,
-    PortfolioComponent,
     LoginComponent,
     RegistroComponent,
     CrearExpLaboralComponent,

@@ -20,28 +20,34 @@ export class EditarExpLaboralComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.expLabService.detail(this.data.id).subscribe(data => {
-      this.expLab = data;
-    }, error => {
-      this.snackbar.open(`Error al cargar experiencia: ${error.error.mensaje}`, 'Cerrar', {
-        duration: 2000,
-        verticalPosition: 'bottom'
-      });
+    this.expLabService.detail(this.data.id).subscribe({
+      next: data => {
+        this.expLab = data;
+      },
+      error: error => {
+        this.snackbar.open(`Error al cargar la experiencia laboral: ${error.error.mensaje}`, 'Cerrar', {
+          duration: 2000,
+          verticalPosition: 'bottom'
+        });
+      }
     })
   }
 
   onUpdate(id: any): void {
-    this.expLabService.update(id, this.expLab).subscribe(data => {
-      this.dialogRef.close();
-      this.snackbar.open('Experiencia actualizada', 'Cerrar', {
-        duration: 2000,
-        verticalPosition: 'bottom'
-      });
-    }, error => {
-      this.snackbar.open(`Error al actualizar experiencia: ${error.error.mensaje}`, 'Cerrar', {
-        duration: 2000,
-        verticalPosition: 'bottom'
-      });
+    this.expLabService.update(id, this.expLab).subscribe({
+      next: data => {
+        this.dialogRef.close();
+        this.snackbar.open('Experiencia laboral actualizada', 'Cerrar', {
+          duration: 2000,
+          verticalPosition: 'bottom'
+        });
+      },
+      error: error => {
+        this.snackbar.open(`Error al actualizar la experiencia laboral: ${error.error.mensaje}`, 'Cerrar', {
+          duration: 2000,
+          verticalPosition: 'bottom'
+        });
+      }
     })
   }
 

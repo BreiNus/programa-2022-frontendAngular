@@ -14,7 +14,8 @@ import { EditarExpLaboralComponent } from './editar-exp-laboral/editar-exp-labor
 })
 export class ExpLaboralComponent implements OnInit {
   expLaboral!: ExpLaboral[];
-  roles!: string[];
+  isLogged = false;
+  isAdmin = false;
 
   constructor(
     private service: ExpLaboralService,
@@ -23,20 +24,10 @@ export class ExpLaboralComponent implements OnInit {
     private snackbar: MatSnackBar
   ) { }
 
-  isLogged = false;
-  isAdmin = false;
 
   ngOnInit(): void {
     this.cargarExpLaboral();
-    this.tokenService.getToken()
-      ? (this.isLogged = true)
-      : (this.isLogged = false);
-    this.roles = this.tokenService.getAuthorities();
-    this.roles.forEach(rol => {
-      if (rol === 'ROLE_ADMIN') {
-        this.isAdmin = true;
-      }
-    })
+    this.isAdmin = this.tokenService.isAdmin();
   }
 
   cargarExpLaboral(): void {
@@ -47,26 +38,22 @@ export class ExpLaboralComponent implements OnInit {
 
   delete(id: any): void {
     if (id != undefined) {
-      this.service.delete(id).subscribe(
-        (data) => {
-          this.cargarExpLaboral();
+      this.service.delete(id).subscribe({
+        next:
+          (data) => {
+            this.cargarExpLaboral();
 
-          this.snackbar.open('Experiencia eliminada', 'Cerrar', {
-            duration: 2000,
-            verticalPosition: 'bottom',
-          });
-        },
-        (error) => {
-          this.snackbar.open(
-            `Error al eliminar experiencia: ${error.error.mensaje}`,
-            'Cerrar',
-            {
+            this.snackbar.open('Experiencia laboral eliminada', 'Cerrar', {
               duration: 2000,
               verticalPosition: 'bottom',
-            }
+            });
+          },
+        error: (error) => {
+          this.snackbar.open(`Error al eliminar experiencia laboral: ${error.error.mensaje}`, 'Cerrar',
+            { duration: 2000, verticalPosition: 'bottom', }
           );
         }
-      );
+      });
     }
   }
 

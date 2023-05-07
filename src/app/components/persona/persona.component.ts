@@ -15,7 +15,8 @@ import { EditarPersonaComponent } from 'src/app/components/persona/editar-person
 export class PersonaComponent implements OnInit {
 
   persona: Persona = new Persona("", "", "", "", 0, "", "",);
-  roles!: string[];
+  isLogged = false;
+  isAdmin = false;
 
   constructor(
     public navBarService: NavBarService,
@@ -25,25 +26,22 @@ export class PersonaComponent implements OnInit {
     private _snackBar: MatSnackBar
   ) { }
 
-  isLogged = false;
-  isAdmin = false;
+
 
   ngOnInit(): void {
-    this.service.getPersona().subscribe(data => {
-      this.persona = data
-      this.tokenService.getToken() ? this.isLogged = true : this.isLogged = false;
-    }, error => {
-      this._snackBar.open(`Error al cargar la información: ${error.error.mensaje}`, 'Cerrar', {
-        duration: 2000,
-        verticalPosition: 'bottom'
-      })
-    })
-    this.roles = this.tokenService.getAuthorities();
-    this.roles.forEach(rol => {
-      if (rol === 'ROLE_ADMIN') {
-        this.isAdmin = true;
+    this.service.getPersona().subscribe({
+      next: data => {
+        this.persona = data
+        this.tokenService.getToken() ? this.isLogged = true : this.isLogged = false;
+      },
+      error: error => {
+        this._snackBar.open(`Error al cargar la información: ${error.error.mensaje}`, 'Cerrar', {
+          duration: 2000,
+          verticalPosition: 'bottom'
+        })
       }
     })
+    this.isAdmin = this.tokenService.isAdmin();
   }
 
   openDialogEdit(): void {

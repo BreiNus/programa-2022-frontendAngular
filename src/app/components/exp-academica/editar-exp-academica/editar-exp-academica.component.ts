@@ -20,28 +20,34 @@ export class EditarExpAcademicaComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.expAcaService.detail(this.data.id).subscribe(data => {
-      this.expAca = data;
-    }, error => {
-      this.snackbar.open(`Error al cargar educacion: ${error.error.mensaje}`, 'Cerrar', {
-        duration: 2000,
-        verticalPosition: 'bottom'
-      });
+    this.expAcaService.detail(this.data.id).subscribe({
+      next: data => {
+        this.expAca = data;
+      },
+      error: error => {
+        this.snackbar.open(`Error al cargar la experiencia academica: ${error.error.mensaje}`, 'Cerrar', {
+          duration: 2000,
+          verticalPosition: 'bottom'
+        });
+      }
     })
   }
 
   onUpdate(id: any): void {
-    this.expAcaService.update(id, this.expAca).subscribe(data => {
-      this.dialogRef.close();
-      this.snackbar.open('Educacion actualizada', 'Cerrar', {
-        duration: 2000,
-        verticalPosition: 'bottom'
-      });
-    }, error => {
-      this.snackbar.open(`Error al actualizar educacion: ${error.error.mensaje}`, 'Cerrar', {
-        duration: 2000,
-        verticalPosition: 'bottom'
-      });
+    this.expAcaService.update(id, this.expAca).subscribe({
+      next: data => {
+        this.dialogRef.close();
+        this.snackbar.open('Experiencia academica actualizada', 'Cerrar', {
+          duration: 2000,
+          verticalPosition: 'bottom'
+        });
+      },
+      error: error => {
+        this.snackbar.open(`Error al actualizar la experiencia academica: ${error.error.mensaje}`, 'Cerrar', {
+          duration: 2000,
+          verticalPosition: 'bottom'
+        });
+      }
     })
   }
 

@@ -2,12 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Skills } from '../models/skills';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.development';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class SkillsService {
-  urlSkills = 'http://localhost:8080/skills/';
+  urlSkills = environment.urlSkills;
   constructor(private httpClient: HttpClient) { }
 
   public list(): Observable<Skills[]> {

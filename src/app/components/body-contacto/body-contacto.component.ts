@@ -4,7 +4,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Persona } from 'src/app/models/persona';
 import { NavBarService } from 'src/app/servicios/nav-bar.service';
 import { PersonaService } from 'src/app/servicios/persona.service';
-import { PortfolioService } from 'src/app/servicios/portfolio.service';
 import { TokenService } from 'src/app/servicios/token.service';
 import { EditarPersonaComponent } from '../persona/editar-persona/editar-persona.component';
 
@@ -15,7 +14,8 @@ import { EditarPersonaComponent } from '../persona/editar-persona/editar-persona
 })
 export class BodyContactoComponent implements OnInit {
   persona: Persona = new Persona("", "", "", "", 0, "", "",);
-  roles!: string[];
+  isLogged = false;
+  isAdmin = false;
 
   constructor(
     public navBarService: NavBarService,
@@ -25,25 +25,22 @@ export class BodyContactoComponent implements OnInit {
     private _snackBar: MatSnackBar
   ) { }
 
-  isLogged = false;
-  isAdmin = false;
+
 
   ngOnInit(): void {
-    this.service.getPersona().subscribe(data => {
-      this.persona = data
-      this.tokenService.getToken() ? this.isLogged = true : this.isLogged = false;
-    }, error => {
-      this._snackBar.open(`Error al cargar la información: ${error.error.mensaje}`, 'Cerrar', {
-        duration: 2000,
-        verticalPosition: 'bottom'
-      })
-    })
-    this.roles = this.tokenService.getAuthorities();
-    this.roles.forEach(rol => {
-      if (rol === 'ROLE_ADMIN') {
-        this.isAdmin = true;
+    this.service.getPersona().subscribe({
+      next: data => {
+        this.persona = data
+        this.tokenService.getToken() ? this.isLogged = true : this.isLogged = false;
+      },
+      error: error => {
+        this._snackBar.open(`Error al cargar la información: ${error.error.mensaje}`, 'Cerrar', {
+          duration: 2000,
+          verticalPosition: 'bottom'
+        })
       }
     })
+    this.isAdmin = this.tokenService.isAdmin();
   }
 
   openDialogEdit(): void {

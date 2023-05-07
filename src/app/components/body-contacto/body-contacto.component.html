@@ -17,7 +17,7 @@
   <br>
   <div class="seccion-info">
     <h1 class="fuente_titulo">¿Hola hay alguien ahi?</h1>
-    <p class="texto-card">Hola por cualquier consulta o duda, no dudes en comunicarte conmigo, en la brevedad me estare
+    <p class="texto-card">Hola por cualquier consulta o duda, no dudes en comunicarte conmigo y en la brevedad me estare
       comunicando con usted, muchisimas gracias por pasarse por mi portfolio, que tenga un buen dia</p>
     <h1 class="fuente_titulo">Informacion de contacto</h1>
     <p class="texto-card"><strong><u>Telefono</u>:</strong> {{ persona.telefono }}</p>
@@ -25,8 +25,7 @@
     <p class="texto-card"><strong><u>GitHub</u>:</strong> <a [href]="persona.gitHubPersonal" target="_blank">Click
         Aqui </a></p>
     <div>
-      <button mat-mini-fab *ngIf="isLogged" (click)="openDialogEdit()"><i
-          class="fa-solid fa-pen-to-square"></i></button>
+      <button mat-mini-fab *ngIf="isAdmin" (click)="openDialogEdit()"><i class="fa-solid fa-pen-to-square"></i></button>
     </div>
   </div>
 </div>

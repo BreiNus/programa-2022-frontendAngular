@@ -2,14 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ExpLaboral } from '../models/exp-laboral';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ExpLaboralService {
-  expLaboralURL = 'http://localhost:8080/trabajos/';
+  expLaboralURL = environment.expLaboralURL;
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) { }
 
   public list(): Observable<ExpLaboral[]> {
     return this.httpClient.get<ExpLaboral[]>(this.expLaboralURL + 'ver');

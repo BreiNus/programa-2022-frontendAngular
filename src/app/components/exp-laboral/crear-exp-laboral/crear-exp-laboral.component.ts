@@ -30,17 +30,20 @@ export class CrearExpLaboralComponent implements OnInit {
 
   onCreate(): void {
     const expLab = new ExpLaboral(this.nombreExpLaboral, this.nombreCompania, this.inicioTrabajo, this.finTrabajo, this.descripcionTrabajo);
-    this.service.create(expLab).subscribe(data => {
-      this.dialogRef.close();
-      this.snackbar.open('Experiencia Laboral creada', 'Cerrar', {
-        duration: 2000,
-        verticalPosition: 'bottom'
-      });
-    }, error => {
-      this.snackbar.open(`Error al crear experiencia: ${error.error.mensaje}`, 'Cerrar', {
-        duration: 2000,
-        verticalPosition: 'bottom'
-      });
+    this.service.create(expLab).subscribe({
+      next: data => {
+        this.dialogRef.close();
+        this.snackbar.open('Experiencia Laboral creada', 'Cerrar', {
+          duration: 2000,
+          verticalPosition: 'bottom'
+        });
+      },
+      error: error => {
+        this.snackbar.open(`Error al crear la experiencia laboral: ${error.error.mensaje}`, 'Cerrar', {
+          duration: 2000,
+          verticalPosition: 'bottom'
+        });
+      }
     })
   }
 

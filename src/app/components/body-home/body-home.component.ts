@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/servicios/portfolio.service';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-body-home',
@@ -7,7 +7,14 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
   styleUrls: ['./body-home.component.css'],
 })
 export class BodyHomeComponent implements OnInit {
-  constructor() {}
 
-  ngOnInit() {}
+  nombreUsuario!: string;
+
+  constructor(
+    private tokenService: TokenService
+  ) { }
+
+  ngOnInit() {
+    this.nombreUsuario = this.tokenService.getUserName();
+  }
 }

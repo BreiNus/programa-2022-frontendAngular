@@ -25,8 +25,7 @@ export class ProyectosComponent implements OnInit {
   }
   */
   proyectos!: Proyectos[];
-  roles!: string[];
-
+  isAdmin = false;
 
   constructor(
     private service: ProyectosService,
@@ -35,20 +34,11 @@ export class ProyectosComponent implements OnInit {
     private _snackBar: MatSnackBar
   ) { }
 
-  isLogged = false;
-  isAdmin = false;
+
 
   ngOnInit(): void {
     this.cargarProyectos();
-    this.tokenService.getToken()
-      ? (this.isLogged = true)
-      : (this.isLogged = false);
-    this.roles = this.tokenService.getAuthorities();
-    this.roles.forEach(rol => {
-      if (rol === 'ROLE_ADMIN') {
-        this.isAdmin = true;
-      }
-    })
+    this.isAdmin = this.tokenService.isAdmin();
   }
 
   cargarProyectos(): void {
@@ -58,28 +48,20 @@ export class ProyectosComponent implements OnInit {
   }
 
   delete(id: any): void {
-    if (id != undefined) {
-      this.service.delete(id).subscribe(
-        (data) => {
-          this.cargarProyectos();
-
+    this.cargarProyectos();
+    this.service.delete(id)
+      .subscribe({
+        next: (data) => {
           this._snackBar.open('Proyecto eliminado', 'Cerrar', {
             duration: 2000,
             verticalPosition: 'bottom',
-          });
+          })
         },
-        (error) => {
+        error: err => {
           this._snackBar.open(
-            `Error al eliminar proyecto: ${error.error.mensaje}`,
-            'Cerrar',
-            {
-              duration: 2000,
-              verticalPosition: 'bottom',
-            }
-          );
+            `Error al eliminar proyecto: ${err.error.mensaje}`, 'Cerrar', { duration: 2000, verticalPosition: 'bottom', })
         }
-      );
-    }
+      })
   }
 
   openDialogNew(): void {

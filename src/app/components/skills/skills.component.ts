@@ -15,7 +15,8 @@ import { EditarSkillsComponent } from './editar-skills/editar-skills.component';
 export class SkillsComponent implements OnInit {
 
   skills!: Skills[];
-  roles!: string[];
+  isLogged = false;
+  isAdmin = false;
 
   constructor(
     private service: SkillsService,
@@ -24,18 +25,11 @@ export class SkillsComponent implements OnInit {
     private _snackBar: MatSnackBar
   ) { }
 
-  isLogged = false;
-  isAdmin = false;
 
   ngOnInit(): void {
     this.listSkills();
     this.tokenService.getToken() ? this.isLogged = true : this.isLogged = false;
-    this.roles = this.tokenService.getAuthorities();
-    this.roles.forEach(rol => {
-      if (rol === 'ROLE_ADMIN') {
-        this.isAdmin = true;
-      }
-    })
+    this.isAdmin = this.tokenService.isAdmin();
   }
 
   listSkills(): void {

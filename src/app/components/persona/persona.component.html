@@ -17,7 +17,7 @@
                 <p class="texto-card"><strong><u>GitHub</u>:</strong> <a [href]="persona.gitHubPersonal"
                         target="_blank">Click Aqui </a></p>
                 <div>
-                    <button mat-mini-fab *ngIf="isLogged" (click)="openDialogEdit()"><i
+                    <button mat-mini-fab *ngIf="isAdmin" (click)="openDialogEdit()"><i
                             class="fa-solid fa-pen-to-square"></i></button>
                 </div>
             </div>

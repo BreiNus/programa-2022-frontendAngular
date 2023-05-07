@@ -2,14 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ExpAcademica } from '../models/exp-academica';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ExpAcademicaService {
-  expAcademicaURL = 'http://localhost:8080/estudios/';
+  expAcademicaURL = environment.expAcademicaURL;
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) { }
 
   public list(): Observable<ExpAcademica[]> {
     return this.httpClient.get<ExpAcademica[]>(this.expAcademicaURL + 'ver');

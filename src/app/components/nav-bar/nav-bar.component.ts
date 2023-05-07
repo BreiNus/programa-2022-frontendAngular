@@ -14,6 +14,7 @@ export class NavBarComponent implements OnInit {
   persona: Persona = new Persona("", "", "", "", 0, "", "");
 
   isLogged = false;
+  isAdmin = false;
 
   constructor(private tokenService: TokenService,
     public navBarService: NavBarService,
@@ -21,11 +22,9 @@ export class NavBarComponent implements OnInit {
 
   //para mostar los botones del navBar si es que esta logueado o no
   ngOnInit(): void {
-    if (this.tokenService.getToken()) {
-      this.isLogged = true;
-    } else {
-      this.isLogged = false;
-    }
+
+    this.isLogged = this.tokenService.isLogged();
+    this.isAdmin = this.tokenService.isAdmin();
 
     this.navBarService.NavBarAtualizar.subscribe(data => {
       this.personaService.getPersona().subscribe(data => this.persona = data);
@@ -37,6 +36,6 @@ export class NavBarComponent implements OnInit {
   //para desloguearse
   onLogOut(): void {
     this.tokenService.logOut();
-    window.location.replace('/login');
+    //window.location.replace('/login');
   }
 }

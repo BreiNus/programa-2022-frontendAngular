@@ -23,7 +23,7 @@ import { EditarProyectosComponent } from './components/proyectos/editar-proyecto
 import { EditarSkillsComponent } from './components/skills/editar-skills/editar-skills.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'home', component: BodyHomeComponent },
   { path: 'quiensoy', component: BodyQuienSoyComponent },
   { path: 'contacto', component: BodyContactoComponent },

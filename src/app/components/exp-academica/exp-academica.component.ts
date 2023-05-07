@@ -14,7 +14,8 @@ import { EditarExpAcademicaComponent } from './editar-exp-academica/editar-exp-a
 })
 export class ExpAcademicaComponent implements OnInit {
   expAcademica!: ExpAcademica[];
-  roles!: string[];
+  isLogged = false;
+  isAdmin = false;
 
   constructor(
     private expAcaService: ExpAcademicaService,
@@ -23,18 +24,11 @@ export class ExpAcademicaComponent implements OnInit {
     private snackbar: MatSnackBar
   ) { }
 
-  isLogged = false;
-  isAdmin = false;
+
 
   ngOnInit(): void {
     this.cargarExpAcademica();
-    this.tokenService.getToken() ? this.isLogged = true : this.isLogged = false;
-    this.roles = this.tokenService.getAuthorities();
-    this.roles.forEach(rol => {
-      if (rol === 'ROLE_ADMIN') {
-        this.isAdmin = true;
-      }
-    })
+    this.isAdmin = this.tokenService.isAdmin();
   }
 
   cargarExpAcademica(): void {
@@ -45,19 +39,22 @@ export class ExpAcademicaComponent implements OnInit {
 
   delete(id: any): void {
     if (id != undefined) {
-      this.expAcaService.delete(id).subscribe(data => {
-        this.cargarExpAcademica();
+      this.expAcaService.delete(id).subscribe({
+        next: data => {
+          this.cargarExpAcademica();
 
-        this.snackbar.open('Educacion eliminada', 'Cerrar', {
-          duration: 2000,
-          verticalPosition: 'bottom'
-        });
+          this.snackbar.open('Experiencia academica eliminada', 'Cerrar', {
+            duration: 2000,
+            verticalPosition: 'bottom'
+          });
 
-      }, error => {
-        this.snackbar.open(`Error al eliminar educacion: ${error.error.mensaje}`, 'Cerrar', {
-          duration: 2000,
-          verticalPosition: 'bottom'
-        });
+        },
+        error: error => {
+          this.snackbar.open(`Error al eliminar la experiencia academica: ${error.error.mensaje}`, 'Cerrar', {
+            duration: 2000,
+            verticalPosition: 'bottom'
+          });
+        }
       });
     }
   }

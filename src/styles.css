@@ -98,10 +98,7 @@
   padding-top: 50px;
 }
 
-/*Margen para los pocentajes de mis conocimientos*/
-.margen-barras-porcentaje {
-  margin-top: 30px;
-}
+
 
 /*clase dentro de card (class card = cc)*/
 .cc {
@@ -109,6 +106,11 @@
   align-items: start;
   justify-content: center;
   flex-direction: column;
+}
+
+.texto-entrada-titulos {
+  font-family: 'Castoro Titling', cursive;
+
 }
 
 /*Fuente del texto de las Card*/
@@ -129,9 +131,4 @@
 html,
 body {
   height: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

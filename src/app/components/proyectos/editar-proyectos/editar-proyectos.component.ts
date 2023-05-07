@@ -22,28 +22,34 @@ export class EditarProyectosComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.service.detail(this.data.id).subscribe(data => {
-      this.proyectos = data;
-    }, error => {
-      this.snackbar.open(`Error al cargar el proyecto: ${error.error.mensaje}`, 'Cerrar', {
-        duration: 2000,
-        verticalPosition: 'bottom'
-      });
+    this.service.detail(this.data.id).subscribe({
+      next: data => {
+        this.proyectos = data;
+      },
+      error: error => {
+        this.snackbar.open(`Error al cargar el proyecto: ${error.error.mensaje}`, 'Cerrar', {
+          duration: 2000,
+          verticalPosition: 'bottom'
+        });
+      }
     })
   }
 
   onUpdate(id: any): void {
-    this.service.update(id, this.proyectos).subscribe(data => {
-      this.dialogRef.close();
-      this.snackbar.open('Proyecto actualizado', 'Cerrar', {
-        duration: 2000,
-        verticalPosition: 'bottom'
-      });
-    }, error => {
-      this.snackbar.open(`Error al actualizar proyecto: ${error.error.mensaje}`, 'Cerrar', {
-        duration: 2000,
-        verticalPosition: 'bottom'
-      });
+    this.service.update(id, this.proyectos).subscribe({
+      next: data => {
+        this.dialogRef.close();
+        this.snackbar.open('Proyecto actualizado', 'Cerrar', {
+          duration: 2000,
+          verticalPosition: 'bottom'
+        });
+      },
+      error: error => {
+        this.snackbar.open(`Error al actualizar proyecto: ${error.error.mensaje}`, 'Cerrar', {
+          duration: 2000,
+          verticalPosition: 'bottom'
+        });
+      }
     })
   }
 

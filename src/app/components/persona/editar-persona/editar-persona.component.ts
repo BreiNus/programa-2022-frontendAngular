@@ -20,11 +20,12 @@ export class EditarPersonaComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.service.detail(this.data.id).subscribe(
-      (data) => {
-        this.persona = data;
-      },
-      (error) => {
+    this.service.detail(this.data.id).subscribe({
+      next:
+        (data) => {
+          this.persona = data;
+        },
+      error: (error) => {
         this.snackbar.open(
           `Error al cargar los datos de la persona: ${error.error.mensaje}`,
           'Cerrar',
@@ -34,19 +35,21 @@ export class EditarPersonaComponent implements OnInit {
           }
         );
       }
-    );
+
+    });
   }
 
   onUpdate(id: any): void {
-    this.service.update(id, this.persona).subscribe(
-      (data) => {
-        this.dialogRef.close();
-        this.snackbar.open('"Acerca de" actualizada', 'Cerrar', {
-          duration: 2000,
-          verticalPosition: 'bottom',
-        });
-      },
-      (error) => {
+    this.service.update(id, this.persona).subscribe({
+      next:
+        (data) => {
+          this.dialogRef.close();
+          this.snackbar.open('"Acerca de" actualizada', 'Cerrar', {
+            duration: 2000,
+            verticalPosition: 'bottom',
+          });
+        },
+      error: (error) => {
         this.snackbar.open(
           `Error al actualizar "Acerca de": ${error.error.mensaje}`,
           'Cerrar',
@@ -56,7 +59,8 @@ export class EditarPersonaComponent implements OnInit {
           }
         );
       }
-    );
+
+    });
   }
 
   onNoClick(): void {

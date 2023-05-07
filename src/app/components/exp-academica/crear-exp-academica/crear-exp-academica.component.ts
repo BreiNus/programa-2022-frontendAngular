@@ -29,17 +29,20 @@ export class CrearExpAcademicaComponent implements OnInit {
 
   onCreate(): void {
     const expAca = new ExpAcademica(this.nombreExpAcademica, this.descripcionExpAcademica, this.nivel, this.lugar, this.inicioEstudio, this.finEstudio);
-    this.expAcaService.create(expAca).subscribe(data => {
-      this.dialogRef.close();
-      this.snackbar.open('Educacion creada', 'Cerrar', {
-        duration: 2000,
-        verticalPosition: 'bottom'
-      });
-    }, error => {
-      this.snackbar.open(`Error al crear educacion: ${error.error.mensaje}`, 'Cerrar', {
-        duration: 2000,
-        verticalPosition: 'bottom'
-      });
+    this.expAcaService.create(expAca).subscribe({
+      next: data => {
+        this.dialogRef.close();
+        this.snackbar.open('Expeciencia academica creada', 'Cerrar', {
+          duration: 2000,
+          verticalPosition: 'bottom'
+        });
+      },
+      error: error => {
+        this.snackbar.open(`Error al crear la experiencia academica: ${error.error.mensaje}`, 'Cerrar', {
+          duration: 2000,
+          verticalPosition: 'bottom'
+        });
+      }
     })
   }
 

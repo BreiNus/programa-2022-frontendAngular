@@ -34,9 +34,14 @@
         <li class="nav-item" *ngIf="!isLogged">
           <!--routerLinkActive="active" es igual que la propiedad de bootstrap "active" pero en angular-->
           <a class="nav-link" routerLinkActive="active" routerLink="/login"><i class="fa-solid fa-key"
-              style="color: #ffffff"></i> Por favor
-            inicie sesion ingresando sus datos o cree una cuenta para ingresar
-            al portfolio, desde ya muchas gracias
+              style="color: #ffffff"></i> Para loguearse ingrese sus credenciales
+            <i class="fa-solid fa-key" style="color: #ffffff"></i></a>
+        </li>
+
+        <li class="nav-item" *ngIf="!isLogged">
+          <!--routerLinkActive="active" es igual que la propiedad de bootstrap "active" pero en angular-->
+          <a class="nav-link" routerLinkActive="active" routerLink="/registro"><i class="fa-solid fa-key"
+              style="color: #ffffff"></i> Para registrarse ingrese los datos pedidos
             <i class="fa-solid fa-key" style="color: #ffffff"></i></a>
         </li>
         <li class="nav-item" *ngIf="isLogged" (click)="onLogOut()">

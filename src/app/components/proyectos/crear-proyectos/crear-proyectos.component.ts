@@ -31,15 +31,15 @@ export class CrearProyectosComponent implements OnInit {
       this.imgProyecto,
       this.descripcionProyecto
     );
-    this.service.create(proyectos).subscribe(
-      (data) => {
+    this.service.create(proyectos).subscribe({
+      next: (data) => {
         this.dialogRef.close();
         this.snackbar.open('Proyecto creado', 'Cerrar', {
           duration: 2000,
           verticalPosition: 'bottom',
         });
       },
-      (error) => {
+      error: (error) => {
         this.snackbar.open(
           `Error al crear proyecto: ${error.error.mensaje}`,
           'Cerrar',
@@ -49,7 +49,8 @@ export class CrearProyectosComponent implements OnInit {
           }
         );
       }
-    );
+
+    })
   }
 
   onNoClick(): void {
