@@ -1,0 +1,4 @@
+Los servicios funcionan como conector del back con el front, y entre muchas cosas, va a tener las url 
+de los endpoints del back para poder consumirlos
+
+*vendria siendo el corazon del front, esto es lo que va a obtener y mandar datos a la API REST

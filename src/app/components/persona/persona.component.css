@@ -1,0 +1,12 @@
+@import url(../proyectos/proyectos.component.css);
+
+
+.seccion-info {
+    padding-left: 60px;
+    text-align: center;
+
+}
+
+.borde-img {
+    border: 2px solid black;
+}

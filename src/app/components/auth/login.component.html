@@ -1,0 +1,39 @@
+<!--Menu de bootstrap-->
+<app-nav-bar></app-nav-bar>
+
+<div class="container d-flex justify-content-center mt-5">
+  <div class="card mb-5" style="width: 18rem">
+    <!--el card va a tener dos partes, el card header que tiene unos botones es decir una 
+                barra de nav pequeña uno para login y otro para register y el card body donde va a estar el form-->
+    <div class="card-header">
+      <!-- Estos son Tabs de bootstrap-->
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/login"><strong>Iniciar Sesión</strong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/registro">Crear cuenta</a>
+        </li>
+      </ul>
+    </div>
+    <div class="card-body">
+      <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+        <div class="form-group">
+          <label for="nombreUsuario">Nombre de Usuario</label>
+          <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control" [(ngModel)]="nombreUsuario"
+            required />
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input type="password" name="password" id="password" class="form-control" [(ngModel)]="password" required />
+        </div>
+        <div class="form-group">
+          <button class="btn btn-outline-success btn-block mt-3" [disabled]="!f.valid" type="submit">
+            <i class="fa-solid fa-right-to-bracket"></i> Iniciar Sesión
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

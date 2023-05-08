@@ -2,61 +2,65 @@
 /*Documento CSS*/
 
 /*Dentro de root var que se pueden reutolizar y ahorrar tiempo a la hora de hacer coding*/
-:root{
---main-color: white;
+:root {
+  --main-color: #ffc200;
 }
 
 /*estilos para el body*/
 .cuerpoPagina {
-    margin:0;
-    background: rgb(172, 183, 194);
+  margin: 0;
+  background: rgb(172, 183, 194);
 }
 
 /*estilos para el footer*/
 .pieDePagina {
-    background-color: black;
-    padding: 20px 0 ;
-    color: var(--main-color);
-    margin-top: 40px;
-    
+  background-color: black;
+  padding: 20px 0;
+  color: var(--main-color);
+  margin-top: 40px;
+
 }
 
-.logotipo{
-    width: 60px;
-    height: 60px;
+.logotipo {
+  width: 50px;
+  height: 50px;
 }
-.iconosRedesHeader{
-    width: 35px; 
-    height: 35px;
-    margin-right: 10px;
-    padding-bottom: 5px;
-    
+
+.iconosRedesHeader {
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+  padding-bottom: 5px;
+
 }
 
 /*estilos para la imagen de fondo*/
 .bg {
-text-align: center;
-padding: 10px;
-height: 100vh;
-background-size: cover;
-box-sizing: border-box;
-filter: blur(3px);
+  border: 2px solid black;
+  text-align: center;
+  padding: 10px;
+  height: 85vh;
+  background-size: cover;
+  box-sizing: border-box;
+  filter: blur(1.5px);
 }
 
 /*estilos para el texto de fondo*/
-.bg-text{
-    color: var(--main-color);
-    font-weight: bold;  /* remarca con un rectangulo el texto*/
-    border: 3px solid lightblue;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 80%;
-    padding: 20px;
-    text-align: center;
-    font-family: 'Ubuntu', sans-serif;
+.bg-text {
+  color: var(--main-color);
+  font-weight: bold;
+  /* remarca con un rectangulo el texto*/
+  border: 5px solid lightblue;
+  border-radius: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 /*estilos para la imagen de fondo*/
@@ -66,153 +70,65 @@ filter: blur(3px);
   height: 100vh;
   background-size: cover;
   box-sizing: border-box;
-  }
+}
+
 /*estilos para el home*/
-.home{
-    background-image: url("assets/images/imgBg.jpg");
+.home {
+  background-image: url("assets/images/imgBg.jpg");
 }
 
-.contact{
-    background-image: url("assets/images/imgBgContact.jpg");
+.contact {
+  background-image: url("assets/images/imgBgContact.jpg");
 }
 
-.quieSoy{
-    background-image: url("assets/images/imgBgSobreMi.jpg");
+.quieSoy {
+  background-image: url("assets/images/imgBgSobreMi.jpg");
 }
 
-.pageError{
-    background-image: url("assets/images/pageNotFound.png");
+.pageError {
+  background-image: url("assets/images/pageNotFound.png");
+}
+
+.iniciarSesion {
+  background-image: url("assets/images/imgBgIniciarSesion.jpg");
 }
 
 /*Esta dentro de <section>*/
-.seccion-custom{
-    padding-top: 50px;
+.seccion-custom {
+  padding-top: 50px;
 }
 
-/*Margen para los pocentajes de mis conocimientos*/
-.margen-barras-porcentaje{
-  margin-top: 30px;
-}
+
 
 /*clase dentro de card (class card = cc)*/
-.cc{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   flex-direction: column; 
+.cc {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.texto-entrada-titulos {
+  font-family: 'Castoro Titling', cursive;
+
 }
 
 /*Fuente del texto de las Card*/
-.card-text{
-    font-family: 'Roboto Mono', monospace;
+.texto-card {
+  font-family: 'Roboto Mono', monospace;
 }
 
-.txt-contact{
-    color: var(--main-color);
-    position:absolute;;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 80%;
-    padding: 20px;
-    text-align: left;
-    font-family: 'Ubuntu', sans-serif;
+.txt-contact {
+  color: black;
+  position: relative;
+  width: 80%;
+  padding: 20px;
+  text-align: left;
+  font-family: 'Ubuntu', sans-serif;
 }
 
-/*barras de progreso cilindricas*/
-/* -------------------------------------
- * Bar container
- * ------------------------------------- */
- .progress-radial {
-    float: left;
-    margin-right: 30px;
-    position: relative;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 2px solid #2f3439;
-    background-color: tomato;
-  }
-/* -------------------------------------
- * Optional centered circle w/text
- * ------------------------------------- */
- .progress-radial .overlay {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    background-color: #fffde8;
-    border-radius: 50%;
-    margin-left: 20px;
-    margin-top: 20px;
-    text-align: center;
-    line-height: 60px;
-    font-size: 12px;
-  }
-/* -------------------------------------
- * Mixin for progress-% class
- * ------------------------------------- */
- .progress-0 {
-    background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(90deg, #ff6347 50%, #2f3439 50%, #2f3439);
-  }
-  .progress-5 {
-    background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(108deg, #ff6347 50%, #2f3439 50%, #2f3439);
-  }
-  .progress-10 {
-    background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(126deg, #ff6347 50%, #2f3439 50%, #2f3439);
-  }
-  .progress-15 {
-    background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(144deg, #ff6347 50%, #2f3439 50%, #2f3439);
-  }
-  .progress-20 {
-    background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(162deg, #ff6347 50%, #2f3439 50%, #2f3439);
-  }
-  .progress-25 {
-    background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(180deg, #ff6347 50%, #2f3439 50%, #2f3439);
-  }
-  .progress-30 {
-    background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(198deg, #ff6347 50%, #2f3439 50%, #2f3439);
-  }
-  .progress-35 {
-    background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(216deg, #ff6347 50%, #2f3439 50%, #2f3439);
-  }
-  .progress-40 {
-    background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(234deg, #ff6347 50%, #2f3439 50%, #2f3439);
-  }
-  .progress-45 {
-    background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(252deg, #ff6347 50%, #2f3439 50%, #2f3439);
-  }
-  .progress-50 {
-    background-image: linear-gradient(-90deg, #ff6347 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
-  }
-  .progress-55 {
-    background-image: linear-gradient(-72deg, #ff6347 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
-  }
-  .progress-60 {
-    background-image: linear-gradient(-54deg, #ff6347 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
-  }
-  .progress-65 {
-    background-image: linear-gradient(-36deg, #ff6347 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
-  }
-  .progress-70 {
-    background-image: linear-gradient(-18deg, #ff6347 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
-  }
-  .progress-75 {
-    background-image: linear-gradient(0deg, #ff6347 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
-  }
-  .progress-80 {
-    background-image: linear-gradient(18deg, #ff6347 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
-  }
-  .progress-85 {
-    background-image: linear-gradient(36deg, #ff6347 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
-  }
-  .progress-90 {
-    background-image: linear-gradient(54deg, #ff6347 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
-  }
-  .progress-95 {
-    background-image: linear-gradient(72deg, #ff6347 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
-  }
-  .progress-100 {
-    background-image: linear-gradient(90deg, #ff6347 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
-  }
 
+html,
+body {
+  height: 100%;
+}

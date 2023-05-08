@@ -1,0 +1,36 @@
+<form novalidate #f="ngForm">
+    <h2 mat-dialog-title>Cargar una Educacion:</h2>
+    <div class="form-container">
+
+        <label for="nombreExpAcademica">Nombre del titulo/certificado del estudio:
+            <input type="text" id="nombreExpAcademica" name="nombreExpAcademica" placeholder="Ej: Tecnico en..."
+                [(ngModel)]="nombreExpAcademica" required />
+        </label>
+        <label for="nivel">Cual es el nivel de la educacion:
+            <input type="text" id="nivel" name="nivel" placeholder="Si es securandio/curso/terciario/universitario/etc"
+                [(ngModel)]="nivel" required />
+        </label>
+        <label for="lugar">Lugar donde se curso el estudio o aclarar si fue online:
+            <input type="text" id="lugar" name="lugar" placeholder="Ej: Direccion / Curso online" [(ngModel)]="lugar"
+                required />
+        </label>
+        <label for="inicioEstudio">Fecha de inicio del estudio:
+            <input type="text" id="inicioEstudio" name="inicioEstudio" placeholder="Ej: 16/03/1998"
+                [(ngModel)]="inicioEstudio" required />
+        </label>
+        <label for="finEstudio">Fecha de fin del estudio:
+            <input type="text" id="finEstudio" name="finEstudio" placeholder="Ej: 24/05/2005 o 'Actualidad'"
+                [(ngModel)]="finEstudio" required />
+        </label>
+        <label for="descripcionExpAcademica">Breve descripcion del estudio:
+            <textarea id="descripcionExpAcademica" name="descripcionExpAcademica"
+                placeholder="Ej: Técnico Profesional en... " maxlength="1000" [(ngModel)]="descripcionExpAcademica"
+                required></textarea>
+        </label>
+
+    </div>
+    <div mat-dialog-actions class="form-container_button">
+        <button mat-button (click)="onNoClick()">Cancelar</button>
+        <button mat-button cdkFocusInitial class="send-button" (click)="onCreate()">Enviar</button>
+    </div>
+</form>

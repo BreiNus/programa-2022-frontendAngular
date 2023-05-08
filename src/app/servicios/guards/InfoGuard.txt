@@ -1,0 +1,10 @@
+#NOTE: 
+
+        Los guards los implemento para detectar si la persona que ingreso tiene rol de
+        admin o user y en consecuencia de eso, los botones de crear, editar y eliminar,
+        se van a ver o no, en la pagina
+
+        Este guard esta aplicado tambien el app-routing.module
+
+
+        PD:No usados

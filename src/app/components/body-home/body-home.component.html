@@ -1,112 +1,15 @@
+<!--Menu de bootstrap-->
+<app-nav-bar></app-nav-bar>
+
 <!--Imagen de fondo de la pagina-->
 <div class="bg home"></div>
 <!--texto de fondo de la pagina-->
 <div class="bg-text container">
-  <h1>Bienvenidos a mi espacio de desarrollo</h1>
+  <h1>Hola {{nombreUsuario}} y bienvenid@ a mi espacio de desarrollo</h1>
   <p>att Matias Cesar Rogante</p>
 </div>
-<!--Cards de bootstrap para deja una img con desc en el home de donde/cuales fueron mis proyectos-->
+<!--Cards de bootstrap para dejar una img con desc en el home de mis proyectos-->
 <!--Importante la implementacion de <section>-->
-<section class="container seccion-custom">
-  <div class="row">
-    <div class="cc col-md" data-aos="flip-left">
-      <img
-        src="../assets/images/proyecto1.png"
-        class="img-fluid"
-        alt="proyecto1"
-      />
-    </div>
-    <div
-      class="col-md"
-      data-aos="fade-right"
-      data-aos-offset="300"
-      data-aos-easing="ease-in-sine"
-    >
-      <p class="card-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet
-        pharetra ante, luctus porta nisi. Morbi a laoreet mauris. Vestibulum
-        tempor, arcu in mollis viverra, nisl felis auctor erat, et pharetra
-        tellus leo eu massa. Sed vel neque lobortis, condimentum orci et, cursus
-        felis. Suspendisse ligula neque, tincidunt at gravida quis, sodales in
-        quam. Quisque suscipit lorem arcu, vitae commodo nunc malesuada sed.
-        Fusce elementum a orci in ornare. Proin molestie pellentesque sem vel
-        lobortis. Nullam nec mi lectus. Phasellus vitae ante quis nisl placerat
-        ultrices. Etiam molestie non lorem non imperdiet. Fusce quis porttitor
-        ligula. Nam eget auctor turpis. Vestibulum ante ipsum primis in faucibus
-        orci luctus et ultrices posuere cubilia curae; Etiam viverra vulputate
-        tellus.
-      </p>
-      <a target="_blank" href="https://github.com/BreiNus?tab=repositories"
-        ><img src="../assets/images/logoGitHub.png" alt="logoGitHub" />Ver
-        GitHub</a
-      >
-    </div>
-  </div>
-</section>
-<!--Segunda card-->
-<section class="container seccion-custom">
-  <div class="row">
-    <div
-      class="col-md"
-      data-aos="fade-right"
-      data-aos-offset="300"
-      data-aos-easing="ease-in-sine"
-    >
-      <p class="card-text">
-        Suspendisse et ligula rutrum, tempor erat quis, scelerisque arcu. Aenean
-        et nisi ut nibh elementum dignissim. Mauris iaculis quam eu urna
-        ultrices, pretium congue metus eleifend. Donec maximus vitae arcu non
-        vulputate. Curabitur eget ex dictum, vestibulum ex in, molestie augue.
-        Cras vehicula elementum tortor vitae efficitur. Curabitur lectus tortor,
-        feugiat faucibus dui vel, scelerisque aliquam ante. Maecenas tincidunt
-        mattis libero. Vestibulum molestie enim a gravida posuere. Proin a nibh
-        tristique, egestas tellus vel, porta nunc. Quisque euismod velit in
-        justo rutrum placerat. Ut turpis nulla, dignissim in egestas sed, porta
-        ullamcorper eros.
-      </p>
-      <a target="_blank" href="https://github.com/BreiNus?tab=repositories"
-        ><img src="../assets/images/logoGitHub.png" alt="logoGitHub" />Ver
-        GitHub</a
-      >
-    </div>
-    <div class="cc col-md" data-aos="flip-left">
-      <img
-        src="../assets/images/proyecto2.png"
-        class="img-fluid"
-        alt="proyecto1"
-      />
-    </div>
-  </div>
-</section>
-<!--Tercera card-->
-<section class="container seccion-custom">
-  <div class="row">
-    <div class="cc col-md" data-aos="flip-left">
-      <img
-        src="../assets/images/proyecto3.png"
-        class="img-fluid"
-        alt="proyecto1"
-      />
-    </div>
-    <div
-      class="col-md"
-      data-aos="fade-right"
-      data-aos-offset="300"
-      data-aos-easing="ease-in-sine"
-    >
-      <p class="card-text">
-        Morbi nec augue ut enim auctor varius. Integer aliquam, dui non
-        vulputate cursus, nunc mi blandit neque, posuere interdum nisi elit et
-        enim. Etiam congue metus elementum, rutrum est quis, faucibus nisl.
-        Donec ac maximus eros. Fusce eu felis diam. Cras convallis ante eros, eu
-        imperdiet ligula faucibus cursus. Praesent laoreet non eros et volutpat.
-        Fusce ante elit, mollis lacinia magna sit amet, vulputate ornare lectus.
-        Fusce orci purus, luctus id quam eu, lobortis varius est.
-      </p>
-      <a target="_blank" href="https://github.com/BreiNus?tab=repositories"
-        ><img src="../assets/images/logoGitHub.png" alt="logoGitHub" />Ver
-        GitHub</a
-      >
-    </div>
-  </div>
-</section>
+<app-proyectos></app-proyectos>
+<!--Footer -->
+<app-footer></app-footer>

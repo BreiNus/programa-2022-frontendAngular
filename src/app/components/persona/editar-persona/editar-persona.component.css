@@ -1,0 +1,50 @@
+form {
+
+    box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
+    border: 2px solid black;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+
+}
+
+h2 {
+    text-align: center;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+    color: greenyellow;
+    text-align: center;
+}
+
+input,
+textarea {
+    border-radius: 5px;
+    margin: 2px 0;
+}
+
+textarea {
+    height: 100px;
+}
+
+.form-container_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    border: 1px solid #a52a2a;
+}
+
+.send-button {
+    background-color: #a52a2a;
+    color: white;
+
+}

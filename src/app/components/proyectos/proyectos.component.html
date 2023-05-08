@@ -1,0 +1,25 @@
+<section class="contenedor_padre">
+  <div class="titulo_mas_BotonAdd">
+    <h2 class="fs-2 text-decoration-underline fuente_titulo">Mis Proyectos</h2>
+    <div mat-button (click)="openDialogNew()" *ngIf="isAdmin">
+      <button mat-mini-fab><i class="fa-regular fa-square-plus fa-lg"></i></button>
+    </div>
+  </div>
+  <div class="contenedor_hijo" *ngFor="let proyecto of proyectos">
+    <img data-aos="flip-left" style="max-width: 20%" [src]="proyecto.imgProyecto" [alt]="proyecto.nombreProyecto" />
+    <div class="descripcion-puesto" data-aos="fade-right">
+      <h3 class="text-decoration-underline">{{ proyecto.nombreProyecto }}</h3>
+      <div data-aos="fade-right">
+        <p class="text-break texto-card">{{ proyecto.descripcionProyecto }}</p>
+        <p class="urlRepo">
+          <a [href]="proyecto.urlRepo" target="_blank"><i class="fa-brands fa-github fa-2xl"></i> Repositorio </a>
+        </p>
+      </div>
+    </div>
+    <div>
+      <button mat-mini-fab *ngIf="isAdmin" (click)="openDialogEdit(proyecto.id)"><i
+          class="fa-solid fa-pen-to-square"></i></button>
+      <button mat-mini-fab *ngIf="isAdmin" (click)="delete(proyecto.id)"><i class="fa-solid fa-trash-can"></i></button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,32 @@
+<form novalidate #f="ngForm">
+    <h2 mat-dialog-title>Cargar nueva experiencia</h2>
+    <div class="form-container">
+
+        <label for="nombreExpLaboral">Nombre del puesto de trabajo:
+            <input type="text" id="nombreExpLaboral" name="nombreExpLaboral" placeholder="Ej: Ej: Scrum Master..."
+                [(ngModel)]="nombreExpLaboral" required />
+        </label>
+        <label for="nombreCompania">Nombre de la empresa/compañia:
+            <input type="text" id="nombreCompania" name="nombreCompania" placeholder="Ej: Apple"
+                [(ngModel)]="nombreCompania" required />
+        </label>
+        <label for="inicioTrabajo">Fecha inicio del trabajo:
+            <input type="text" id="inicioTrabajo" name="inicioTrabajo" placeholder="Ej: 16/03/1998"
+                [(ngModel)]="inicioTrabajo" required />
+        </label>
+        <label for="finTrabajo">Fecha de fin del trabajo:
+            <input type="text" id="finTrabajo" name="finTrabajo" placeholder="Ej: 24/05/2005 o 'Actualidad'"
+                [(ngModel)]="finTrabajo" required />
+        </label>
+        <label for="descripcionTrabajo">Breve descripcion de lo que se hizo en este trabajo:
+            <textarea id="descripcionTrabajo" name="descripcionTrabajo"
+                placeholder="Ej: Analisis del equipo y tiempo de trabajo para..." maxlength="1000"
+                [(ngModel)]="descripcionTrabajo" required></textarea>
+        </label>
+
+    </div>
+    <div mat-dialog-actions class="form-container_button">
+        <button mat-button (click)="onNoClick()">Cancelar</button>
+        <button mat-button cdkFocusInitial class="send-button" (click)="onCreate()">Enviar</button>
+    </div>
+</form>

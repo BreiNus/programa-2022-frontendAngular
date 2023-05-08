@@ -1,76 +1,72 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+<nav class="navbar navbar-expand-lg navbar-dark bg-black border-navBar">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/home">
-      <img
-        class="logotipo"
-        src="../assets/images/logotipo.png"
-        alt="logotipo"
-      />
+    <a class="navbar-brand" *ngIf="isLogged" routerLink="/home">
+      <img class="logotipo" src="../assets/images/logotipo.png" alt="logotipo" />
     </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="isLogged">
           <!--routerLinkActive="active" es igual que la propiedad de bootstrap "active" pero en angular-->
-          <a class="nav-link" routerLinkActive="active" routerLink="/home"
-            >Home</a
-          >
+          <a class="nav-link" routerLinkActive="active" routerLink="/home"><i class="fa-solid fa-house-chimney"
+              style="color: #ffffff"></i>
+            Home</a>
         </li>
         <!--
           <li class="nav-item">
             <a class="nav-link" href="./pages/proyectos.htm">Proyectos</a>
           </li>
           -->
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="/quiensoy"
-            >Who I am?</a
-          >
+        <li class="nav-item" *ngIf="isLogged">
+          <a class="nav-link" routerLinkActive="active" routerLink="/quiensoy"><i class="fa-solid fa-user-tie"
+              style="color: #ffffff"></i> ¿Quien soy?</a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="/contacto"
-            >Contacto</a
-          >
+        <li class="nav-item" *ngIf="isLogged">
+          <a class="nav-link" routerLinkActive="active" routerLink="/contacto"><i class="fa-regular fa-address-card"
+              style="color: #ffffff"></i>
+            Contacto</a>
+        </li>
+
+        <li class="nav-item" *ngIf="!isLogged">
+          <!--routerLinkActive="active" es igual que la propiedad de bootstrap "active" pero en angular-->
+          <a class="nav-link" routerLinkActive="active" routerLink="/login"><i class="fa-solid fa-key"
+              style="color: #ffffff"></i> Para loguearse ingrese sus credenciales
+            <i class="fa-solid fa-key" style="color: #ffffff"></i></a>
+        </li>
+
+        <li class="nav-item" *ngIf="!isLogged">
+          <!--routerLinkActive="active" es igual que la propiedad de bootstrap "active" pero en angular-->
+          <a class="nav-link" routerLinkActive="active" routerLink="/registro"><i class="fa-solid fa-key"
+              style="color: #ffffff"></i> Para registrarse ingrese los datos pedidos
+            <i class="fa-solid fa-key" style="color: #ffffff"></i></a>
+        </li>
+        <li class="nav-item" *ngIf="isLogged" (click)="onLogOut()">
+          <a class="nav-link" routerLinkActive="active" style="cursor: pointer;"><i class="fa-solid fa-door-open"
+              style="color: #ffffff"></i>
+            Cerrar
+            Sesión</a>
         </li>
       </ul>
       <li class="nav-item">
         <a class="nav-link" href="https://www.instagram.com/matias_rogante/">
-          <img
-            class="iconosRedesHeader"
-            src="../assets/images/logoInstagram.png"
-            class="rounded float-end"
-            alt="logoInstragram"
-          />
+          <img class="iconosRedesHeader" src="../assets/images/logoInstagram.png" class="rounded float-end"
+            alt="logoInstragram" />
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">
-          <img
-            class="iconosRedesHeader"
-            src="../assets/images/logoWhatsApp.png"
-            class="rounded float-end"
-            alt="logoWhatsapp"
-          />
+          <img class="iconosRedesHeader" src="../assets/images/logoWhatsApp.png" class="rounded float-end"
+            alt="logoWhatsapp" />
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="https://github.com/BreiNus?tab=repositories">
-          <img
-            class="iconosRedesHeader"
-            src="../assets/images/logoGitHub.png"
-            class="rounded float-end"
-            alt="logogithub"
-          />
+          <img class="iconosRedesHeader" src="../assets/images/logoGitHub.png" class="rounded float-end"
+            alt="logogithub" />
         </a>
       </li>
     </div>

@@ -1,0 +1,27 @@
+<form novalidate #f="ngForm">
+  <h2 mat-dialog-title>Cargar un proyecto:</h2>
+  <div class="form-container">
+    <label for="nombreProyecto">Nombre del proyecto:
+      <input type="text" id="nombreProyecto" name="nombreProyecto" placeholder="Ej: portfolio web"
+        [(ngModel)]="nombreProyecto" required />
+    </label>
+    <label for="urlRepo">URL del repositorio:
+      <input type="url" id="urlRepo" name="urlRepo" placeholder="URL del repositorio" [(ngModel)]="urlRepo" required />
+    </label>
+    <label for="imgProyecto">Imagen del proyecto:
+      <input type="url" id="imgProyecto" name="imgProyecto" placeholder="Imagen del proyecto" [(ngModel)]="imgProyecto"
+        required />
+    </label>
+    <label for="descripcionProyecto">Descripción del proyecto:
+      <textarea id="descripcionProyecto" name="descripcionProyecto"
+        placeholder="Ej: Desalloro del backend en JAVA de..." maxlength="1000" [(ngModel)]="descripcionProyecto"
+        required></textarea>
+    </label>
+  </div>
+  <div mat-dialog-actions class="form-container__btn">
+    <button mat-button (click)="onNoClick()">Cancelar</button>
+    <button mat-button cdkFocusInitial class="send-button" (click)="onCreate()">
+      Cargar
+    </button>
+  </div>
+</form>

@@ -1,0 +1,22 @@
+<form novalidate #f="ngForm">
+    <h2 mat-dialog-title>Cargar nuevo conocimiento:</h2>
+    <div class="form-container">
+        <label for="nombreSkill">Nombre de la Skill:
+            <input type="text" id="nombreSkill" name="nombreSkill" placeholder="Ej: JAVA" [(ngModel)]="nombreSkill"
+                required />
+        </label>
+        <label for="porcentajeSkill">Nivel de Skill:
+            <input type="number" min="10" max="100" id="porcentajeSkill" name="porcentajeSkill"
+                placeholder="Ingrese un numero del 1 al 100" [(ngModel)]="porcentajeSkill" required />
+        </label>
+        <label for="colorSkill" class="color-skills">Aplica un color a la Skill:
+            <input type="color" id="colorSkill" name="colorSkill" [(ngModel)]="colorSkill" required />
+        </label>
+    </div>
+    <div mat-dialog-actions class="form-container_button">
+        <button mat-button (click)="onNoClick()">Cancelar</button>
+        <button mat-button cdkFocusInitial class="send-button" (click)="onCreate()">
+            Crear
+        </button>
+    </div>
+</form>
