@@ -1,10 +1,12 @@
 export const environment = {
     production: false,
-    authURL: 'http://localhost:8080/auth/',
-    personaURL: 'http://localhost:8080/persona/',
-    expAcademicaURL: 'http://localhost:8080/estudios/',
-    expLaboralURL: 'http://localhost:8080/trabajos/',
-    urlProyectos: 'http://localhost:8080/proyectos/',
-    urlSkills: 'http://localhost:8080/skills/',
+    authURL: 'https://mi-portfolio-web.onrender.com/auth/',
+    personaURL: 'https://mi-portfolio-web.onrender.com/persona/',
+    expAcademicaURL: 'https://mi-portfolio-web.onrender.com/estudios/',
+    expLaboralURL: 'https://mi-portfolio-web.onrender.com/trabajos/',
+    urlProyectos: 'https://mi-portfolio-web.onrender.com/proyectos/',
+    urlSkills: 'https://mi-portfolio-web.onrender.com/skills/',
 
 };
+
+//http://localhost:8080
