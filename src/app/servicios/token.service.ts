@@ -38,7 +38,7 @@ export class TokenService {
     }
     const token = this.getToken();
     const payload = token.split('.')[1];
-    const payloadDecoded = atob(payload);
+    const payloadDecoded = window.atob(payload);
     const value = JSON.parse(payloadDecoded);
     const username = value.sub;
     return username;
@@ -51,7 +51,7 @@ export class TokenService {
     }
     const token = this.getToken();
     const payload = token.split('.')[1];
-    const payloadDecoded = atob(payload);
+    const payloadDecoded = window.atob(payload);
     const value = JSON.parse(payloadDecoded);
     const roles = value.roles;
     if (roles.indexOf('ROLE_ADMIN') < 0) {
