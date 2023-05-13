@@ -3,7 +3,9 @@
 
 :small_orange_diamond:Link para acceder al repositorio de mi [Backend](https://github.com/BreiNus/CrudBackendArgentinaPrograma)
 
-:heavy_exclamation_mark:NOTA: Lo que veran a continuacion esta visto con FireBase, Render y Clever-cloud funcionando, pero es posible que Render o Clever-cloud prensenten errores debido a que el plan de hosting es gratuito, para encontrar soluciones provisorias ingrese al repositorio de mi [backend](https://github.com/BreiNus/CrudBackendArgentinaPrograma) y siga las instrucciones.
+:heavy_exclamation_mark:NOTA 1: Lo que veran a continuacion esta visto con FireBase, Render y Clever-cloud funcionando, pero es posible que Render o Clever-cloud prensenten errores debido a que el plan de hosting es gratuito, para encontrar soluciones provisorias ingrese al repositorio de mi [backend](https://github.com/BreiNus/CrudBackendArgentinaPrograma) y siga las instrucciones.
+
+:heavy_exclamation_mark:NOTA 2: Lo mas probable es que Render falle, asique las URL utilizadas en mis servicios (ubicadas en `\src\environments\environment.development.ts`) las deje por default apuntando al backend levantado localmente [(como se puede observar aqui)](https://gyazo.com/1488fa19be6a49dcaad1fa4ab576ff55), entonces para que apunten a el backend levantado en Render, hay que reemplazar `http://localhost:8080` por `https://mi-portfolio-web.onrender.com`
 
 ## :mag_right:Detalles del Frontend:
 ### :lock: Iniciar Sesion o Registrarse:
