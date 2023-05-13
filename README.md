@@ -1,27 +1,53 @@
-# PortfolioFrontendAngular
+# :computer: Backend de mi portfolio | Argentina programa
+:small_orange_diamond:Bienvenidos al repositorio de mi frontend para el trabajo final integrador de #YoProgramo del curso de Argentina Programa.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
+:small_orange_diamond:Link para acceder al repositorio de mi [Backend](https://github.com/BreiNus/CrudBackendArgentinaPrograma)
 
-## Development server
+:heavy_exclamation_mark:NOTA: Lo que veran a continuacion esta visto con FireBase, Render y Clever-cloud funcionando, pero es posible que Render o Clever-cloud prensenten errores debido a que el plan de hosting es gratuito, para encontrar soluciones provisorias ingrese al repositorio de mi [backend](https://github.com/BreiNus/CrudBackendArgentinaPrograma) y siga las instrucciones.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## :mag_right:Detalles del Frontend:
+### :lock: Iniciar Sesion o Registrarse:
+:small_orange_diamond: Lo primero que veras al ingresar a mi porfolio es el Registro o el Login:
 
-## Code scaffolding
+:key: En el Registro: Al crear una cuenta seras redirigido al login
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![CrearCuenta](https://github.com/BreiNus/programa-2022-frontendAngular/assets/113384178/8f4e6a4c-6a78-40c7-bdbb-984853d33e72)
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+:lock: En el Login: Al iniciar sesion seras redirigido al home
 
-## Running unit tests
+![loginUser](https://github.com/BreiNus/programa-2022-frontendAngular/assets/113384178/4dfe5d3f-6ec7-4f55-bc75-e8bfb73adbe9)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## :unlock: Pagina principal:
+:mag: La pagina cuenta con una barra de navegacion para acceder a todas sus partes, mas un boton para el LogOut y links a mis redes:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+![muestraNavBar](https://github.com/BreiNus/programa-2022-frontendAngular/assets/113384178/05adbd7e-24fa-466e-a9fd-30e8fc9472f6)
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+:page_with_curl: Si la cuenta con la cual ingresaste tiene permisos de admin, los botones para el CRUD estaran visibles:
+
+![inicioAdmin](https://github.com/BreiNus/programa-2022-frontendAngular/assets/113384178/c4389e8e-7be2-4337-be6d-3fe83b0f7ff2)
+
+
+:page_with_curl: Si la cuenta con la cual ingresaste tiene permisos de user, los botones para el CRUD estaran ocultos:
+
+![inicioUser](https://github.com/BreiNus/programa-2022-frontendAngular/assets/113384178/8a4964b8-521b-4e5b-8920-c27cbc6f6745)
+
+### :clipboard: Sistema CRUD:
+:small_orange_diamond: Si la cuenta tiene permisos de admin podras realizar el CRUD como se muestra a continuacion:
+
+![CRUD](https://github.com/BreiNus/programa-2022-frontendAngular/assets/113384178/a391baf5-19de-4ab9-8779-62236a4e7e7f)
+
+## :bulb: Instalacion:
+:small_blue_diamond:Clonar el repositorio desde GIT o descargar el archivo ZIP: `git clone https://github.com/BreiNus/programa-2022-frontendAngular.git`
+
+:small_blue_diamond:Generar la carpeta modules: `npm install`
+
+:small_blue_diamond:Compilar y montar el proyecto: `ng serve`
+
+:small_blue_diamond:Tener corriendo el backend
+
+:small_blue_diamond:Si el frontend esta corriendo localmente ingresar a: `http://localhost:4200/`
+
+:small_blue_diamond:Si el frontend esta corriendo en FireBase ingresar a: `https://mi-portfolio-web-6e5bd.web.app` o `https://mi-portfolio-web-6e5bd.firebaseapp.com`
