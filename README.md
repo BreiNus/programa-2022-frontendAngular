@@ -53,9 +53,3 @@
 :small_blue_diamond:Si el frontend esta corriendo localmente ingresar a: `http://localhost:4200/`
 
 :small_blue_diamond:Si el frontend esta corriendo en FireBase ingresar a: `https://mi-portfolio-web-6e5bd.web.app` o `https://mi-portfolio-web-6e5bd.firebaseapp.com`
-
-### :sunglasses: Credenciales de usuario con rol de admin: 
-
-userName: `admin`
-
-password: `1235`
