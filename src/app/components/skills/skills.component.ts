@@ -22,7 +22,7 @@ export class SkillsComponent implements OnInit {
     private service: SkillsService,
     private tokenService: TokenService,
     public dialog: MatDialog,
-    private _snackBar: MatSnackBar
+    private snackBar: MatSnackBar
   ) { }
 
 
@@ -41,19 +41,22 @@ export class SkillsComponent implements OnInit {
 
   delete(id: any): void {
     if (id != undefined) {
-      this.service.delete(id).subscribe(data => {
-        this.listSkills();
+      this.service.delete(id).subscribe({
+        next: data => {
+          this.listSkills();
 
-        this._snackBar.open('Skill eliminada', 'Cerrar', {
-          duration: 2000,
-          verticalPosition: 'bottom'
-        });
+          this.snackBar.open('Proyecto eliminado', 'Cerrar', {
+            duration: 2000,
+            verticalPosition: 'bottom'
+          });
 
-      }, error => {
-        this._snackBar.open(`Error al eliminar skill: ${error.error.mensaje}`, 'Cerrar', {
-          duration: 2000,
-          verticalPosition: 'bottom'
-        });
+        },
+        error: error => {
+          this.snackBar.open(`Error al eliminar proyecto: ${error.error.mensaje}`, 'Cerrar', {
+            duration: 2000,
+            verticalPosition: 'bottom'
+          });
+        }
       });
     }
   }

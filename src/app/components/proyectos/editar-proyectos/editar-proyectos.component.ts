@@ -16,7 +16,7 @@ export class EditarProyectosComponent implements OnInit {
   constructor(
     private service: ProyectosService,
     public dialogRef: MatDialogRef<EditarProyectosComponent>,
-    private snackbar: MatSnackBar,
+    private snackBar: MatSnackBar,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
@@ -27,7 +27,7 @@ export class EditarProyectosComponent implements OnInit {
         this.proyectos = data;
       },
       error: error => {
-        this.snackbar.open(`Error al cargar el proyecto: ${error.error.mensaje}`, 'Cerrar', {
+        this.snackBar.open(`Error al cargar el proyecto: ${error.error.mensaje}`, 'Cerrar', {
           duration: 2000,
           verticalPosition: 'bottom'
         });
@@ -39,13 +39,13 @@ export class EditarProyectosComponent implements OnInit {
     this.service.update(id, this.proyectos).subscribe({
       next: data => {
         this.dialogRef.close();
-        this.snackbar.open('Proyecto actualizado', 'Cerrar', {
+        this.snackBar.open('Proyecto actualizado', 'Cerrar', {
           duration: 2000,
           verticalPosition: 'bottom'
         });
       },
       error: error => {
-        this.snackbar.open(`Error al actualizar proyecto: ${error.error.mensaje}`, 'Cerrar', {
+        this.snackBar.open(`Error al actualizar proyecto: ${error.error.mensaje}`, 'Cerrar', {
           duration: 2000,
           verticalPosition: 'bottom'
         });

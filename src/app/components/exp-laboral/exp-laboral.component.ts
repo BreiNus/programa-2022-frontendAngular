@@ -21,7 +21,7 @@ export class ExpLaboralComponent implements OnInit {
     private service: ExpLaboralService,
     private tokenService: TokenService,
     public dialog: MatDialog,
-    private snackbar: MatSnackBar
+    private snackBar: MatSnackBar
   ) { }
 
 
@@ -43,13 +43,13 @@ export class ExpLaboralComponent implements OnInit {
           (data) => {
             this.cargarExpLaboral();
 
-            this.snackbar.open('Experiencia laboral eliminada', 'Cerrar', {
+            this.snackBar.open('Experiencia laboral eliminada', 'Cerrar', {
               duration: 2000,
               verticalPosition: 'bottom',
             });
           },
         error: (error) => {
-          this.snackbar.open(`Error al eliminar experiencia laboral: ${error.error.mensaje}`, 'Cerrar',
+          this.snackBar.open(`Error al eliminar experiencia laboral: ${error.error.mensaje}`, 'Cerrar',
             { duration: 2000, verticalPosition: 'bottom', }
           );
         }

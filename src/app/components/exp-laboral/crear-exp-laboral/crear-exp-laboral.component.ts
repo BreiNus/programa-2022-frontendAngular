@@ -21,7 +21,7 @@ export class CrearExpLaboralComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<CrearExpLaboralComponent>,
     private service: ExpLaboralService,
-    private snackbar: MatSnackBar,
+    private snackBar: MatSnackBar,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
@@ -33,13 +33,13 @@ export class CrearExpLaboralComponent implements OnInit {
     this.service.create(expLab).subscribe({
       next: data => {
         this.dialogRef.close();
-        this.snackbar.open('Experiencia Laboral creada', 'Cerrar', {
+        this.snackBar.open('Experiencia Laboral creada', 'Cerrar', {
           duration: 2000,
           verticalPosition: 'bottom'
         });
       },
       error: error => {
-        this.snackbar.open(`Error al crear la experiencia laboral: ${error.error.mensaje}`, 'Cerrar', {
+        this.snackBar.open(`Error al crear la experiencia laboral: ${error.error.mensaje}`, 'Cerrar', {
           duration: 2000,
           verticalPosition: 'bottom'
         });

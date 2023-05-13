@@ -31,7 +31,7 @@ export class ProyectosComponent implements OnInit {
     private service: ProyectosService,
     private tokenService: TokenService,
     public dialog: MatDialog,
-    private _snackBar: MatSnackBar
+    private snackBar: MatSnackBar
   ) { }
 
 
@@ -48,20 +48,25 @@ export class ProyectosComponent implements OnInit {
   }
 
   delete(id: any): void {
-    this.cargarProyectos();
-    this.service.delete(id)
-      .subscribe({
-        next: (data) => {
-          this._snackBar.open('Proyecto eliminado', 'Cerrar', {
+    if (id != undefined) {
+      this.service.delete(id).subscribe({
+        next: data => {
+          this.cargarProyectos();
+
+          this.snackBar.open('Proyecto eliminado', 'Cerrar', {
             duration: 2000,
-            verticalPosition: 'bottom',
-          })
+            verticalPosition: 'bottom'
+          });
+
         },
-        error: err => {
-          this._snackBar.open(
-            `Error al eliminar proyecto: ${err.error.mensaje}`, 'Cerrar', { duration: 2000, verticalPosition: 'bottom', })
+        error: error => {
+          this.snackBar.open(`Error al eliminar proyecto: ${error.error.mensaje}`, 'Cerrar', {
+            duration: 2000,
+            verticalPosition: 'bottom'
+          });
         }
-      })
+      });
+    }
   }
 
   openDialogNew(): void {

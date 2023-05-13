@@ -22,7 +22,7 @@ export class BodyContactoComponent implements OnInit {
     public service: PersonaService,
     private tokenService: TokenService,
     public dialog: MatDialog,
-    private _snackBar: MatSnackBar
+    private snackBar: MatSnackBar
   ) { }
 
 
@@ -34,7 +34,7 @@ export class BodyContactoComponent implements OnInit {
         this.tokenService.getToken() ? this.isLogged = true : this.isLogged = false;
       },
       error: error => {
-        this._snackBar.open(`Error al cargar la información: ${error.error.mensaje}`, 'Cerrar', {
+        this.snackBar.open(`Error al cargar la información: ${error.error.mensaje}`, 'Cerrar', {
           duration: 2000,
           verticalPosition: 'bottom'
         })

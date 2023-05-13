@@ -15,7 +15,7 @@ export class EditarPersonaComponent implements OnInit {
   constructor(
     private service: PersonaService,
     public dialogRef: MatDialogRef<EditarPersonaComponent>,
-    private snackbar: MatSnackBar,
+    private snackBar: MatSnackBar,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
@@ -26,7 +26,7 @@ export class EditarPersonaComponent implements OnInit {
           this.persona = data;
         },
       error: (error) => {
-        this.snackbar.open(
+        this.snackBar.open(
           `Error al cargar los datos de la persona: ${error.error.mensaje}`,
           'Cerrar',
           {
@@ -44,13 +44,13 @@ export class EditarPersonaComponent implements OnInit {
       next:
         (data) => {
           this.dialogRef.close();
-          this.snackbar.open('"Acerca de" actualizada', 'Cerrar', {
+          this.snackBar.open('"Acerca de" actualizada', 'Cerrar', {
             duration: 2000,
             verticalPosition: 'bottom',
           });
         },
       error: (error) => {
-        this.snackbar.open(
+        this.snackBar.open(
           `Error al actualizar "Acerca de": ${error.error.mensaje}`,
           'Cerrar',
           {

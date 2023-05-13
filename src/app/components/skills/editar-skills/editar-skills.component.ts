@@ -15,7 +15,7 @@ export class EditarSkillsComponent implements OnInit {
   constructor(
     private service: SkillsService,
     public dialogRef: MatDialogRef<EditarSkillsComponent>,
-    private _snackBar: MatSnackBar,
+    private snackBar: MatSnackBar,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
@@ -24,7 +24,7 @@ export class EditarSkillsComponent implements OnInit {
     this.service.detail(this.data.id).subscribe(data => {
       this.skills = data;
     }, error => {
-      this._snackBar.open(`Error al cargar skill: ${error.error.mensaje}`, 'Cerrar', {
+      this.snackBar.open(`Error al cargar skill: ${error.error.mensaje}`, 'Cerrar', {
         duration: 2000,
         verticalPosition: 'bottom'
       })
@@ -34,12 +34,12 @@ export class EditarSkillsComponent implements OnInit {
   onUpdate(id: any): void {
     this.service.update(id, this.skills).subscribe(data => {
       this.dialogRef.close();
-      this._snackBar.open(`Skills actualizado correctamente`, 'Cerrar', {
+      this.snackBar.open(`Skills actualizado correctamente`, 'Cerrar', {
         duration: 2000,
         verticalPosition: 'bottom'
       })
     }, error => {
-      this._snackBar.open(`Error al actualizar skill: ${error.error.mensaje}`, 'Cerrar', {
+      this.snackBar.open(`Error al actualizar skill: ${error.error.mensaje}`, 'Cerrar', {
         duration: 2000,
         verticalPosition: 'bottom'
       })

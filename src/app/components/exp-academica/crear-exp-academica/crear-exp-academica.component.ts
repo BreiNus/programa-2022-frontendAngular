@@ -20,7 +20,7 @@ export class CrearExpAcademicaComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<CrearExpAcademicaComponent>,
     private expAcaService: ExpAcademicaService,
-    private snackbar: MatSnackBar,
+    private snackBar: MatSnackBar,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
@@ -32,13 +32,13 @@ export class CrearExpAcademicaComponent implements OnInit {
     this.expAcaService.create(expAca).subscribe({
       next: data => {
         this.dialogRef.close();
-        this.snackbar.open('Expeciencia academica creada', 'Cerrar', {
+        this.snackBar.open('Expeciencia academica creada', 'Cerrar', {
           duration: 2000,
           verticalPosition: 'bottom'
         });
       },
       error: error => {
-        this.snackbar.open(`Error al crear la experiencia academica: ${error.error.mensaje}`, 'Cerrar', {
+        this.snackBar.open(`Error al crear la experiencia academica: ${error.error.mensaje}`, 'Cerrar', {
           duration: 2000,
           verticalPosition: 'bottom'
         });

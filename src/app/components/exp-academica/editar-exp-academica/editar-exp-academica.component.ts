@@ -15,7 +15,7 @@ export class EditarExpAcademicaComponent implements OnInit {
   constructor(
     private expAcaService: ExpAcademicaService,
     public dialogRef: MatDialogRef<EditarExpAcademicaComponent>,
-    private snackbar: MatSnackBar,
+    private snackBar: MatSnackBar,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
@@ -25,7 +25,7 @@ export class EditarExpAcademicaComponent implements OnInit {
         this.expAca = data;
       },
       error: error => {
-        this.snackbar.open(`Error al cargar la experiencia academica: ${error.error.mensaje}`, 'Cerrar', {
+        this.snackBar.open(`Error al cargar la experiencia academica: ${error.error.mensaje}`, 'Cerrar', {
           duration: 2000,
           verticalPosition: 'bottom'
         });
@@ -37,13 +37,13 @@ export class EditarExpAcademicaComponent implements OnInit {
     this.expAcaService.update(id, this.expAca).subscribe({
       next: data => {
         this.dialogRef.close();
-        this.snackbar.open('Experiencia academica actualizada', 'Cerrar', {
+        this.snackBar.open('Experiencia academica actualizada', 'Cerrar', {
           duration: 2000,
           verticalPosition: 'bottom'
         });
       },
       error: error => {
-        this.snackbar.open(`Error al actualizar la experiencia academica: ${error.error.mensaje}`, 'Cerrar', {
+        this.snackBar.open(`Error al actualizar la experiencia academica: ${error.error.mensaje}`, 'Cerrar', {
           duration: 2000,
           verticalPosition: 'bottom'
         });

@@ -21,7 +21,7 @@ export class ExpAcademicaComponent implements OnInit {
     private expAcaService: ExpAcademicaService,
     private tokenService: TokenService,
     public dialog: MatDialog,
-    private snackbar: MatSnackBar
+    private snackBar: MatSnackBar
   ) { }
 
 
@@ -43,14 +43,14 @@ export class ExpAcademicaComponent implements OnInit {
         next: data => {
           this.cargarExpAcademica();
 
-          this.snackbar.open('Experiencia academica eliminada', 'Cerrar', {
+          this.snackBar.open('Experiencia academica eliminada', 'Cerrar', {
             duration: 2000,
             verticalPosition: 'bottom'
           });
 
         },
         error: error => {
-          this.snackbar.open(`Error al eliminar la experiencia academica: ${error.error.mensaje}`, 'Cerrar', {
+          this.snackBar.open(`Error al eliminar la experiencia academica: ${error.error.mensaje}`, 'Cerrar', {
             duration: 2000,
             verticalPosition: 'bottom'
           });
