@@ -22,7 +22,9 @@
 
 
 ## :unlock: Pagina principal:
-:mag: La pagina cuenta con una barra de navegacion para acceder a todas sus partes, mas un boton para el LogOut y links a mis redes:
+(Para explicar las funcionalidades de mi proyecto, tome lo que se puede hacer desde la pagina de mis proyectos, pero hay dos paginas mas, con sus respectivas funcionalidades y con mas informacion sobre mi :D)
+
+:mag: La pagina cuenta con una barra de navegacion para acceder a la pagina "home" (donde estan mis proyectos), a "quien soy" (donde esta mi experiencial laboral, academica y mis hablilidades/skills), a "contacto" (donde estan los medios para comunicarse conmigo), mas un boton para el LogOut y links a mis redes:
 
 ![muestraNavBar](https://github.com/BreiNus/programa-2022-frontendAngular/assets/113384178/05adbd7e-24fa-466e-a9fd-30e8fc9472f6)
 
